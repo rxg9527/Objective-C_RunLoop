@@ -1372,11 +1372,11 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
     __CFLock(&loopsLock);
     if (!__CFRunLoops) { // 第一次进入时，初始化全局Dic，并先为主线程创建一个 RunLoop。
         __CFUnlock(&loopsLock);
-        // 创建字典
+    // 创建字典
 	CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &kCFTypeDictionaryValueCallBacks);
-        // 创建主线程对应的runloop
+    // 创建主线程对应的runloop
 	CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
-        // 使用字典保存主线程-主线程对应的runloop
+    // 使用字典保存主线程-主线程对应的runloop
 	CFDictionarySetValue(dict, pthreadPointer(pthread_main_thread_np()), mainLoop);
         
 	if (!OSAtomicCompareAndSwapPtrBarrier(NULL, dict, (void * volatile *)&__CFRunLoops)) {
@@ -1386,16 +1386,14 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
         __CFLock(&loopsLock);
     }
     
-    // 从字典中获取子线程的runloop
+    // 直接从 Dictionary 里获取子线程的runloop
     CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
     __CFUnlock(&loopsLock);
-    if (!loop) {
-        // 如果子线程的runloop不存在,那么就为该线程创建一个对应的runloop
+    if (!loop) { // 如果子线程的runloop不存在,那么就为该线程创建一个对应的runloop
 	CFRunLoopRef newLoop = __CFRunLoopCreate(t);
         __CFLock(&loopsLock);
 	loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
-        // 把当前子线程和对应的runloop保存到字典中
-	if (!loop) {
+	if (!loop) { // 把当前子线程和对应的runloop保存到字典中
 	    CFDictionarySetValue(__CFRunLoops, pthreadPointer(t), newLoop);
 	    loop = newLoop;
 	}
@@ -1404,6 +1402,7 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
 	CFRelease(newLoop);
     }
     if (pthread_equal(t, pthread_self())) {
+        /// 注册一个回调，当线程销毁时，顺便也销毁其对应的 RunLoop
         _CFSetTSD(__CFTSDKeyRunLoop, (void *)loop, NULL);
         if (0 == _CFGetTSD(__CFTSDKeyRunLoopCntr)) {
             _CFSetTSD(__CFTSDKeyRunLoopCntr, (void *)(PTHREAD_DESTRUCTOR_ITERATIONS-1), (void (*)(void *))__CFFinalizeRunLoop);
