@@ -2421,7 +2421,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
             // 2. 通知 Observers: RunLoop 即将触发 Timer 回调
             __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeTimers);
         if (rlm->_observerMask & kCFRunLoopBeforeSources)
-            // 3. 通知 Observers: RunLoop 即将触发 Source 回调
+            // 3. 通知 Observers: RunLoop 即将触发 Source0 (非port) 回调。
             __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeSources);
         // 执行被加入的block
 	__CFRunLoopDoBlocks(rl, rlm);
@@ -2478,6 +2478,12 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
             }
             msg = (mach_msg_header_t *)msg_buffer;
             
+            /**
+             /// • 一个基于 port 的Source 的事件。
+             /// • 一个 Timer 到时间了
+             /// • RunLoop 自身的超时时间到了
+             /// • 被其他什么调用者手动唤醒
+             */
             __CFRunLoopServiceMachPort(waitSet, &msg, sizeof(msg_buffer), &livePort, poll ? 0 : TIMEOUT_INFINITY, &voucherState, &voucherCopy);
             
             if (modeQueuePort != MACH_PORT_NULL && livePort == modeQueuePort) {
@@ -2530,7 +2536,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
         
         // 8. 通知 Observers: RunLoop 的线程刚刚被唤醒了
 	if (!poll && (rlm->_observerMask & kCFRunLoopAfterWaiting)) __CFRunLoopDoObservers(rl, rlm, kCFRunLoopAfterWaiting);
-        // 处理消息
+        //  收到消息，处理消息
         handle_msg:;
         __CFRunLoopSetIgnoreWakeUps(rl);
 
@@ -2699,7 +2705,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
     // 根据modeName找到对应mode（运行模式）
     CFRunLoopModeRef currentMode = __CFRunLoopFindMode(rl, modeName, false);
     
-    // 判断mode里没有source/timer, 没有直接返回。
+    // 判断mode里有没有source/timer, 没有直接返回。
     if (NULL == currentMode || __CFRunLoopModeIsEmpty(rl, currentMode, rl->_currentMode)) {
         Boolean did = false;
         if (currentMode)
@@ -2717,7 +2723,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
 	if (currentMode->_observerMask & kCFRunLoopEntry )
         // 1. 通知 Observers: RunLoop 即将进入 loop
         __CFRunLoopDoObservers(rl, currentMode, kCFRunLoopEntry);
-    // 进入loop
+    // 内部函数，进入loop
 	result = __CFRunLoopRun(rl, currentMode, seconds, returnAfterSourceHandled, previousMode);
     
 	if (currentMode->_observerMask & kCFRunLoopExit )
@@ -2737,11 +2743,11 @@ void CFRunLoopRun(void) {	/* DOES CALLOUT */
     int32_t result;
     do {
         
-        //CFRunLoopRunSpecific具体处理runloop的运行情况
-        //CFRunLoopGetCurrent()  当前runloop对象
-        //kCFRunLoopDefaultMode  runloop的运行模式的名称
-        //1.0e10                 runloop默认的运行时间，即超时为10的九次方
-        //returnAfterSourceHandled 回调处理
+        //CFRunLoopRunSpecific      具体处理runloop的运行情况
+        //CFRunLoopGetCurrent()     当前runloop对象
+        //kCFRunLoopDefaultMode     runloop的运行模式的名称
+        //1.0e10                    runloop默认的运行时间，即超时为10的九次方
+        //returnAfterSourceHandled  回调处理
         result = CFRunLoopRunSpecific(CFRunLoopGetCurrent(), kCFRunLoopDefaultMode, 1.0e10, false);
         CHECK_FOR_FORK();
         
