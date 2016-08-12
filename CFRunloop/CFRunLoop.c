@@ -1370,7 +1370,7 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
 	t = pthread_main_thread_np();
     }
     __CFLock(&loopsLock);
-    if (!__CFRunLoops) {
+    if (!__CFRunLoops) { // 第一次进入时，初始化全局Dic，并先为主线程创建一个 RunLoop。
         __CFUnlock(&loopsLock);
         // 创建字典
 	CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &kCFTypeDictionaryValueCallBacks);
