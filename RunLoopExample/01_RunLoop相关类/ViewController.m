@@ -35,7 +35,7 @@
      第二个参数:runloop的运行模式
      */
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-    
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:UITrackingRunLoopMode]; // 同时添加到UITrackingRunLoopMode下时可以解决问题
 }
 
 - (void)run {
