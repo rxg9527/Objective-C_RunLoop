@@ -17,11 +17,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //1.获得主线程对应的runloop
+    NSRunLoop *mainRunLoop = [NSRunLoop mainRunLoop];
+
+    //2.获得当前线程对应的runLoop
+    NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
+    
+    /**
+     *  mainRunLoop:    0x7f8d8b709840
+     *  currentRunLoop: 0x7f8d8b709840
+     */
+    NSLog(@"\nmainRunLoop:%p\ncurrentRunLoop:%p", mainRunLoop, currentRunLoop);
+
+    // Core Foundation
+    /**
+     *  mainRunLoop:    0x7f8d8b4050d0
+     *  currentRunLoop: 0x7f8d8b4050d0
+     */
+    NSLog(@"\nmainRunLoop:%p\ncurrentRunLoop:%p", CFRunLoopGetMain(), CFRunLoopGetCurrent());
+
+    /**
+     *  mainRunLoop:    0x7f8d8b4050d0
+     */
+    NSLog(@"\nmainRunLoop:%p",mainRunLoop.getCFRunLoop);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
