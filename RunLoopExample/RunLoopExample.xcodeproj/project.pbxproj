@@ -42,7 +42,7 @@
 		BF59DB631D5EAEE50035F80B = {
 			isa = PBXGroup;
 			children = (
-				BF59DB6E1D5EAEE50035F80B /* RunLoopExample */,
+				BF59DB6E1D5EAEE50035F80B /* 00_RunLoop简单使用 */,
 				BF59DB6D1D5EAEE50035F80B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF59DB6E1D5EAEE50035F80B /* RunLoopExample */ = {
+		BF59DB6E1D5EAEE50035F80B /* 00_RunLoop简单使用 */ = {
 			isa = PBXGroup;
 			children = (
 				BF59DB721D5EAEE50035F80B /* AppDelegate.h */,
@@ -68,6 +68,7 @@
 				BF59DB801D5EAEE50035F80B /* Info.plist */,
 				BF59DB6F1D5EAEE50035F80B /* Supporting Files */,
 			);
+			name = "00_RunLoop简单使用";
 			path = RunLoopExample;
 			sourceTree = "<group>";
 		};
