@@ -19,9 +19,26 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self timer1];
+}
+
+- (void)timer1
+{
+    //1.创建定时器
+    NSTimer *timer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(run) userInfo:nil repeats:YES];
+
+    //2.添加定时器到runLoop中,指定runloop的运行模式为NSDefaultRunLoopMode
+    /*
+     第一个参数:定时器
+     第二个参数:runloop的运行模式
+     */
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    
+}
+
+- (void)run {
+    NSLog(@"run---%@---%@", [NSThread currentThread], [NSRunLoop currentRunLoop].currentMode);
 }
 
 @end
