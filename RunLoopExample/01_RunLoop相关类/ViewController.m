@@ -20,7 +20,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self timer1];
+//    [self timer1];
+    [self timer2];
 }
 
 - (void)timer1
@@ -47,6 +48,11 @@
      占用,标签,凡是添加到NSRunLoopCommonModes中的事件爱你都会被同时添加到打上commmon标签的运行模式上
      */
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)timer2 {
+    //该方法内部自动添加到runloop中,并且设置运行模式为默认,即在正常下执行timer，滑动textView时不能执行timer
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(run) userInfo:nil repeats:YES];
 }
 
 - (void)run {
