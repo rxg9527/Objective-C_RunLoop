@@ -21,7 +21,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self timer1];
-    [self timer2];
+//    [self timer2];
+//    [NSThread detachNewThreadSelector:@selector(timer3) toTarget:self withObject:nil]; // 此时timer3中的run方法不执行，因为子线程RunLoop不会自动创建
+    [NSThread detachNewThreadSelector:@selector(timer4) toTarget:self withObject:nil]; // 此时timer4中的run方法执行，因为子线程RunLoop已经手动创建
 }
 
 - (void)timer1
@@ -53,6 +55,17 @@
 - (void)timer2 {
     //该方法内部自动添加到runloop中,并且设置运行模式为默认,即在正常下执行timer，滑动textView时不能执行timer
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(run) userInfo:nil repeats:YES];
+}
+
+- (void)timer3 {
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(run) userInfo:nil repeats:YES];
+}
+
+- (void)timer4 {
+    NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(run) userInfo:nil repeats:YES];
+    //开启runloop
+    [currentRunLoop run];
 }
 
 - (void)run {
