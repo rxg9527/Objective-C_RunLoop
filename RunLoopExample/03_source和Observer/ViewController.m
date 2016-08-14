@@ -14,6 +14,13 @@
 
 @implementation ViewController
 
+- (IBAction)didClickBtn:(id)sender {
+    /**
+     *  断点可以看到『__CFRunLoopDoSources0』
+     */
+    NSLog(@"%s", __func__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
