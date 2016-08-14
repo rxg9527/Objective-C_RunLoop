@@ -25,6 +25,12 @@
 		BF59DBB21D6056A00035F80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB01D6056A00035F80B /* Main.storyboard */; };
 		BF59DBB41D6056A00035F80B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB31D6056A00035F80B /* Assets.xcassets */; };
 		BF59DBB71D6056A00035F80B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB51D6056A00035F80B /* LaunchScreen.storyboard */; };
+		BF59DBDF1D60584F0035F80B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBDE1D60584F0035F80B /* main.m */; };
+		BF59DBE21D60584F0035F80B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBE11D60584F0035F80B /* AppDelegate.m */; };
+		BF59DBE51D60584F0035F80B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBE41D60584F0035F80B /* ViewController.m */; };
+		BF59DBE81D60584F0035F80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBE61D60584F0035F80B /* Main.storyboard */; };
+		BF59DBEA1D60584F0035F80B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBE91D60584F0035F80B /* Assets.xcassets */; };
+		BF59DBED1D60584F0035F80B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBEB1D60584F0035F80B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,16 @@
 		BF59DBB31D6056A00035F80B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF59DBB61D6056A00035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF59DBB81D6056A00035F80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF59DBDB1D60584F0035F80B /* 03_source和Observer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "03_source和Observer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59DBDE1D60584F0035F80B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF59DBE01D60584F0035F80B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF59DBE11D60584F0035F80B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF59DBE31D60584F0035F80B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF59DBE41D60584F0035F80B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF59DBE71D60584F0035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF59DBE91D60584F0035F80B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF59DBEC1D60584F0035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF59DBEE1D60584F0035F80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF59DBD81D60584F0035F80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +114,7 @@
 				BF59DB6E1D5EAEE50035F80B /* 00_RunLoop简单使用 */,
 				BF59DB8B1D5EB5210035F80B /* 01_RunLoop相关类 */,
 				BF59DBA61D6056A00035F80B /* 02_GCD中的定时器 */,
+				BF59DBDC1D60584F0035F80B /* 03_source和Observer */,
 				BF59DB6D1D5EAEE50035F80B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +125,7 @@
 				BF59DB6C1D5EAEE50035F80B /* RunLoopExample.app */,
 				BF59DB8A1D5EB5210035F80B /* 01_RunLoop相关类.app */,
 				BF59DBA51D6056A00035F80B /* 02_GCD中的定时器.app */,
+				BF59DBDB1D60584F0035F80B /* 03_source和Observer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +203,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BF59DBDC1D60584F0035F80B /* 03_source和Observer */ = {
+			isa = PBXGroup;
+			children = (
+				BF59DBE01D60584F0035F80B /* AppDelegate.h */,
+				BF59DBE11D60584F0035F80B /* AppDelegate.m */,
+				BF59DBE31D60584F0035F80B /* ViewController.h */,
+				BF59DBE41D60584F0035F80B /* ViewController.m */,
+				BF59DBE61D60584F0035F80B /* Main.storyboard */,
+				BF59DBE91D60584F0035F80B /* Assets.xcassets */,
+				BF59DBEB1D60584F0035F80B /* LaunchScreen.storyboard */,
+				BF59DBEE1D60584F0035F80B /* Info.plist */,
+				BF59DBDD1D60584F0035F80B /* Supporting Files */,
+			);
+			path = "03_source和Observer";
+			sourceTree = "<group>";
+		};
+		BF59DBDD1D60584F0035F80B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF59DBDE1D60584F0035F80B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +281,23 @@
 			productReference = BF59DBA51D6056A00035F80B /* 02_GCD中的定时器.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BF59DBDA1D60584F0035F80B /* 03_source和Observer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF59DBF11D60584F0035F80B /* Build configuration list for PBXNativeTarget "03_source和Observer" */;
+			buildPhases = (
+				BF59DBD71D60584F0035F80B /* Sources */,
+				BF59DBD81D60584F0035F80B /* Frameworks */,
+				BF59DBD91D60584F0035F80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "03_source和Observer";
+			productName = "03_source和Observer";
+			productReference = BF59DBDB1D60584F0035F80B /* 03_source和Observer.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,6 +314,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					BF59DBA41D6056A00035F80B = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					BF59DBDA1D60584F0035F80B = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -268,6 +337,7 @@
 				BF59DB6B1D5EAEE50035F80B /* RunLoopExample */,
 				BF59DB891D5EB5210035F80B /* 01_RunLoop相关类 */,
 				BF59DBA41D6056A00035F80B /* 02_GCD中的定时器 */,
+				BF59DBDA1D60584F0035F80B /* 03_source和Observer */,
 			);
 		};
 /* End PBXProject section */
@@ -303,6 +373,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF59DBD91D60584F0035F80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59DBED1D60584F0035F80B /* LaunchScreen.storyboard in Resources */,
+				BF59DBEA1D60584F0035F80B /* Assets.xcassets in Resources */,
+				BF59DBE81D60584F0035F80B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -333,6 +413,16 @@
 				BF59DBAF1D6056A00035F80B /* ViewController.m in Sources */,
 				BF59DBAC1D6056A00035F80B /* AppDelegate.m in Sources */,
 				BF59DBA91D6056A00035F80B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59DBD71D60584F0035F80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59DBE51D60584F0035F80B /* ViewController.m in Sources */,
+				BF59DBE21D60584F0035F80B /* AppDelegate.m in Sources */,
+				BF59DBDF1D60584F0035F80B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +473,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF59DBB61D6056A00035F80B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF59DBE61D60584F0035F80B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF59DBE71D60584F0035F80B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF59DBEB1D60584F0035F80B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF59DBEC1D60584F0035F80B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -536,6 +642,28 @@
 			};
 			name = Release;
 		};
+		BF59DBEF1D60584F0035F80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "03_source和Observer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Yuen.-3-source-Observer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF59DBF01D60584F0035F80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "03_source和Observer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Yuen.-3-source-Observer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -555,6 +683,7 @@
 				BF59DB851D5EAEE50035F80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF59DB9E1D5EB5210035F80B /* Build configuration list for PBXNativeTarget "01_RunLoop相关类" */ = {
 			isa = XCConfigurationList;
@@ -563,12 +692,22 @@
 				BF59DBA01D5EB5210035F80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF59DBB91D6056A00035F80B /* Build configuration list for PBXNativeTarget "02_GCD中的定时器" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF59DBBA1D6056A00035F80B /* Debug */,
 				BF59DBBB1D6056A00035F80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF59DBF11D60584F0035F80B /* Build configuration list for PBXNativeTarget "03_source和Observer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59DBEF1D60584F0035F80B /* Debug */,
+				BF59DBF01D60584F0035F80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
