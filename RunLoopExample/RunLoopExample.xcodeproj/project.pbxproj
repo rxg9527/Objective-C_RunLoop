@@ -19,6 +19,12 @@
 		BF59DB971D5EB5210035F80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DB951D5EB5210035F80B /* Main.storyboard */; };
 		BF59DB991D5EB5210035F80B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59DB981D5EB5210035F80B /* Assets.xcassets */; };
 		BF59DB9C1D5EB5210035F80B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DB9A1D5EB5210035F80B /* LaunchScreen.storyboard */; };
+		BF59DBA91D6056A00035F80B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBA81D6056A00035F80B /* main.m */; };
+		BF59DBAC1D6056A00035F80B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBAB1D6056A00035F80B /* AppDelegate.m */; };
+		BF59DBAF1D6056A00035F80B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBAE1D6056A00035F80B /* ViewController.m */; };
+		BF59DBB21D6056A00035F80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB01D6056A00035F80B /* Main.storyboard */; };
+		BF59DBB41D6056A00035F80B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB31D6056A00035F80B /* Assets.xcassets */; };
+		BF59DBB71D6056A00035F80B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBB51D6056A00035F80B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,16 @@
 		BF59DB981D5EB5210035F80B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF59DB9B1D5EB5210035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF59DB9D1D5EB5210035F80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF59DBA51D6056A00035F80B /* 02_GCD中的定时器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "02_GCD中的定时器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59DBA81D6056A00035F80B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF59DBAA1D6056A00035F80B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF59DBAB1D6056A00035F80B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF59DBAD1D6056A00035F80B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF59DBAE1D6056A00035F80B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF59DBB11D6056A00035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF59DBB31D6056A00035F80B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF59DBB61D6056A00035F80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF59DBB81D6056A00035F80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF59DBA21D6056A00035F80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +90,7 @@
 			children = (
 				BF59DB6E1D5EAEE50035F80B /* 00_RunLoop简单使用 */,
 				BF59DB8B1D5EB5210035F80B /* 01_RunLoop相关类 */,
+				BF59DBA61D6056A00035F80B /* 02_GCD中的定时器 */,
 				BF59DB6D1D5EAEE50035F80B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +100,7 @@
 			children = (
 				BF59DB6C1D5EAEE50035F80B /* RunLoopExample.app */,
 				BF59DB8A1D5EB5210035F80B /* 01_RunLoop相关类.app */,
+				BF59DBA51D6056A00035F80B /* 02_GCD中的定时器.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +154,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BF59DBA61D6056A00035F80B /* 02_GCD中的定时器 */ = {
+			isa = PBXGroup;
+			children = (
+				BF59DBAA1D6056A00035F80B /* AppDelegate.h */,
+				BF59DBAB1D6056A00035F80B /* AppDelegate.m */,
+				BF59DBAD1D6056A00035F80B /* ViewController.h */,
+				BF59DBAE1D6056A00035F80B /* ViewController.m */,
+				BF59DBB01D6056A00035F80B /* Main.storyboard */,
+				BF59DBB31D6056A00035F80B /* Assets.xcassets */,
+				BF59DBB51D6056A00035F80B /* LaunchScreen.storyboard */,
+				BF59DBB81D6056A00035F80B /* Info.plist */,
+				BF59DBA71D6056A00035F80B /* Supporting Files */,
+			);
+			path = "02_GCD中的定时器";
+			sourceTree = "<group>";
+		};
+		BF59DBA71D6056A00035F80B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF59DBA81D6056A00035F80B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +215,23 @@
 			productReference = BF59DB8A1D5EB5210035F80B /* 01_RunLoop相关类.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BF59DBA41D6056A00035F80B /* 02_GCD中的定时器 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF59DBB91D6056A00035F80B /* Build configuration list for PBXNativeTarget "02_GCD中的定时器" */;
+			buildPhases = (
+				BF59DBA11D6056A00035F80B /* Sources */,
+				BF59DBA21D6056A00035F80B /* Frameworks */,
+				BF59DBA31D6056A00035F80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "02_GCD中的定时器";
+			productName = "02_GCD中的定时器";
+			productReference = BF59DBA51D6056A00035F80B /* 02_GCD中的定时器.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -179,6 +245,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					BF59DB891D5EB5210035F80B = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					BF59DBA41D6056A00035F80B = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -198,6 +267,7 @@
 			targets = (
 				BF59DB6B1D5EAEE50035F80B /* RunLoopExample */,
 				BF59DB891D5EB5210035F80B /* 01_RunLoop相关类 */,
+				BF59DBA41D6056A00035F80B /* 02_GCD中的定时器 */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +293,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF59DBA31D6056A00035F80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59DBB71D6056A00035F80B /* LaunchScreen.storyboard in Resources */,
+				BF59DBB41D6056A00035F80B /* Assets.xcassets in Resources */,
+				BF59DBB21D6056A00035F80B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,6 +323,16 @@
 				BF59DB941D5EB5210035F80B /* ViewController.m in Sources */,
 				BF59DB911D5EB5210035F80B /* AppDelegate.m in Sources */,
 				BF59DB8E1D5EB5210035F80B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59DBA11D6056A00035F80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59DBAF1D6056A00035F80B /* ViewController.m in Sources */,
+				BF59DBAC1D6056A00035F80B /* AppDelegate.m in Sources */,
+				BF59DBA91D6056A00035F80B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +367,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF59DB9B1D5EB5210035F80B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF59DBB01D6056A00035F80B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF59DBB11D6056A00035F80B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF59DBB51D6056A00035F80B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF59DBB61D6056A00035F80B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -408,6 +514,28 @@
 			};
 			name = Release;
 		};
+		BF59DBBA1D6056A00035F80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "02_GCD中的定时器/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Yuen.-2-GCD-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF59DBBB1D6056A00035F80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "02_GCD中的定时器/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Yuen.-2-GCD-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,6 +561,14 @@
 			buildConfigurations = (
 				BF59DB9F1D5EB5210035F80B /* Debug */,
 				BF59DBA01D5EB5210035F80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF59DBB91D6056A00035F80B /* Build configuration list for PBXNativeTarget "02_GCD中的定时器" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59DBBA1D6056A00035F80B /* Debug */,
+				BF59DBBB1D6056A00035F80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
