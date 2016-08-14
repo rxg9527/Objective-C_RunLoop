@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) dispatch_source_t timer;
+
 @end
 
 @implementation ViewController
@@ -45,6 +47,8 @@
     
     //4.启动执行
     dispatch_resume(timer);
+    
+    self.timer = timer;
 }
 
 @end
