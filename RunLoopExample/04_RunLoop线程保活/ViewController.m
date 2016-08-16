@@ -31,6 +31,14 @@
 
 -(void)task1 {
     NSLog(@"task1---%@",[NSThread currentThread]);
+    
+    //解决方法:开runloop
+    //1.获得子线程对应的runloop
+    NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+    //2.默认是没有开启
+    [runloop run];
+    
+    NSLog(@"---end----");
 }
 
 -(void)task2 {
