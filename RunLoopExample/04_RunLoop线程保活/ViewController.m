@@ -35,6 +35,10 @@
     //解决方法:开runloop
     //1.获得子线程对应的runloop
     NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+    
+    //保证RunLoop不退出
+    [runloop addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+
     //2.默认是没有开启
     [runloop run];
     
