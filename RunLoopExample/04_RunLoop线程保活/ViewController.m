@@ -10,18 +10,31 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSThread *thread;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)DidClickCreateBtn:(id)sender {
+    //1.创建线程
+    self.thread = [[NSThread alloc]initWithTarget:self selector:@selector(task1) object:nil];
+    [self.thread start];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)DidClickContinueBtn:(id)sender {
+    /**
+     *  self.thread 已经是死亡状态，task2不能执行
+     */
+    [self performSelector:@selector(task2) onThread:self.thread withObject:nil waitUntilDone:YES];
+}
+
+-(void)task1 {
+    NSLog(@"task1---%@",[NSThread currentThread]);
+}
+
+-(void)task2 {
+    NSLog(@"task2---%@",[NSThread currentThread]);
 }
 
 @end
